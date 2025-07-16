@@ -1,0 +1,30 @@
+create database Amritaa;
+use Amritaa;
+create table Employees (EmpID int,Name varchar(10),Department varchar(20),Salary int);
+insert into Employees(EmpID, Name, Department,Salary) values(101,'Alice', 'HR',50000);
+insert into Employees(EmpID, Name, Department,Salary) values(102,'Bob', 'Finance',60000);
+insert into Employees(EmpID, Name, Department,Salary) values(103,'Charlie', 'IT',70000);
+alter table Employees add column joiningDate date;
+update Employees set Salary=65000 where EmpID=102;
+delete from Employees where Name='Charlie';
+select *from Employees;
+drop table Employees;
+create table Students(StudentID int,Name varchar(10),Department varchar(20),Marks int);
+insert into Students(StudentID, Name, Department,Marks) values(1,'Ravi', 'CSE',85);
+insert into Students(StudentID, Name, Department,Marks) values(2,'Priya', 'ECE',78);
+insert into Students(StudentID, Name, Department,Marks) values(3,'Arjun', 'CSE',92);
+insert into Students(StudentID, Name, Department,Marks) values(4,'Neha', 'ME',67);
+insert into Students(StudentID, Name, Department,Marks) values(5,'Anjali', 'ECE',74);
+alter table Students add column Email varchar(10);
+select *from Students;
+update Students set Marks=Marks+5 where Department='CSE';
+delete from Students where Marks<=70;
+select *from Students;
+select *from Students where Department='ECE';
+select *from Students where Department in ('CSE','ME');
+select *from Students where Department not in ('CSE');
+drop table Students;
+
+
+
+
