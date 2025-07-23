@@ -1,0 +1,55 @@
+create database Amritaa;
+use Amritaa;
+create table Employees (EmpID int,Name varchar(10),Department varchar(20),Salary int);
+insert into Employees(EmpID, Name, Department,Salary) values(101,'Alice', 'HR',50000);
+insert into Employees(EmpID, Name, Department,Salary) values(102,'Bob', 'Finance',60000);
+insert into Employees(EmpID, Name, Department,Salary) values(103,'Charlie', 'IT',70000);
+alter table Employees add column joiningDate date;
+update Employees set Salary=65000 where EmpID=102;
+delete from Employees where Name='Charlie';
+select *from Employees;
+drop table Employees;
+create table Students(StudentID int,Name varchar(10),Department varchar(20),Marks int);
+insert into Students(StudentID, Name, Department,Marks) values(1,'Ravi', 'CSE',85);
+insert into Students(StudentID, Name, Department,Marks) values(2,'Priya', 'ECE',78);
+insert into Students(StudentID, Name, Department,Marks) values(3,'Arjun', 'CSE',92);
+insert into Students(StudentID, Name, Department,Marks) values(4,'Neha', 'ME',67);
+insert into Students(StudentID, Name, Department,Marks) values(5,'Anjali', 'ECE',74);
+insert into Students(StudentID, Name, Department,Marks) values(6,'Hari', 'CSE',96);
+select *from Students;
+select count(name) from Students
+select count(name) as totalnumberofstudents from students;
+
+find the number of students in the table;
+select count(*) as totalnumberofstudents from students;
+select *from Students;
+
+find Out how many students got more than 35 marks;
+select count(*) from students where Marks<95;
+select count(*) from students where Marks>80;
+
+find the sum of all the marks;
+select sum(Marks) from Students;
+
+find the sum of al the marks which is greater than 80
+select sum(Marks) from students where Marks>80;
+
+find the average marks for all the students
+select avg(Marks) from students;
+select *from students;
+
+find the average marks in in each Department
+select Department, avg(Marks) as averagemarks from students group by Department;
+
+find the Max and Min Marks from each Department
+select Department, max(Marks) as highestmarks, min(Marks) as minimummarks from students group by Department;
+
+
+find and count the total number of students who appeared for each students
+select Department, count(StudentID) as studentcount from students group by Department;
+
+find the total marks obtained in each department
+select Department, sum(Marks) as totalmarks from Students group by Department;
+
+find overall average
+select count(*) as totalstudents, avg(Marks) as overallavg from Students;
